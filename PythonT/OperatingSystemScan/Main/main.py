@@ -15,6 +15,7 @@ def GetData():
 
 
 def main():
+    open("PC_LOGS.txt","w").close()
     with open("PC_LOGS.txt", "a") as file:
         file.write(datetime.now().strftime("%Y-%m-%d %H:%M:%S\n"))
     start = time()
