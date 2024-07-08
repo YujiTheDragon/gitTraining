@@ -1,16 +1,30 @@
 #!/bin/bash
 
-file_path="C:/Users/KAY3SF/Desktop/Training/PythonT/OperatingSystemScan/Main/PC_LOGS.txt"
+dir_path=~/Desktop/PC_SCAN
 
-
-py main.py
-if [ ! -s "$file_path" ]; then
-
-echo "ERROR"
-cat PC_LOGS.txt
-exit 1
-
+if [ -d "$dir_path" ]; then
+    py main.py
+    cat PC_LOGS.txt
+    echo "Successfully ran PC scan"
+else 
+    echo "Files not found installing"
+    mkdir -p ~/Desktop/PC_SCAN
+    if [ $? -ne 0 ]; then
+        echo "Failed to make main Directory"
+        exit 1
+    fi
+    cd ~/Desktop/PC_SCAN
+    ls ~/Desktop/PC_SCAN/gitTraining
+    if [ $? -ne 0 ]; then    
+        git clone https://github.com/YujiTheDragon/gitTraining.git
+    fi
+    py -m ensurepip --upgrade
+    pip install psutil
+    if [ $? -ne 0 ]; then
+        echo "Failed to download Modules"
+        exit 1
+    fi
+    read -p "Press enter to continue"
+    cd gitTraining/PythonT/OperatingSystemScan/Main/
+    ./test.sh
 fi
-
-cat PC_LOGS.txt
-echo "Successfully ran PC scan"
