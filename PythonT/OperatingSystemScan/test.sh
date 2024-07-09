@@ -26,6 +26,7 @@ else
     fi
     $PYTHON_EXE -m ensurepip --upgrade
     pip install psutil
+    pip install matplotlib
     if [ $? -ne 0 ]; then
         echo "Failed to download Modules"
         exit 1

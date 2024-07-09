@@ -1,6 +1,6 @@
 import sys
 
-#sys.path.insert(0,'~/Desktop/Training/PythonT/OperatingSystemScan/')
+#sys.path.append("PythonT/OperatingSystemScan/")
 
 
 import OSReader as OSR
