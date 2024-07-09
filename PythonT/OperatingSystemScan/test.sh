@@ -32,6 +32,6 @@ else
         exit 1
     fi
     read -p "Press enter to continue"
-    cd gitTraining/PythonT/OperatingSystemScan
+    cd ~/Desktop/PC_SCAN/gitTraining/PythonT/OperatingSystemScan
     bash ./test.sh
 fi

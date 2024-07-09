@@ -1,4 +1,4 @@
 import sys
-sys.path.append("PythonT/OperatingSystemScan/Visualization")
+sys.path.append("Visualization")
 
 import draw

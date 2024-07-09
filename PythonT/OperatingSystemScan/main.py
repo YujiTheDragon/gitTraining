@@ -1,12 +1,8 @@
-import sys
-
-#sys.path.append("PythonT/OperatingSystemScan/")
-
-
 import OSReader as OSR
 from time import time
 from datetime import datetime
 import Visualization as VIS
+
 
 def GetData():
     OSR.CPU_Reader.DisplayCPU_Usage()

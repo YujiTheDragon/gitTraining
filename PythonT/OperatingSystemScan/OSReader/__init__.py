@@ -1,5 +1,5 @@
 import sys
-sys.path.append("PythonT/OperatingSystemScan/OSReader")
+sys.path.append("OSReader")
 
 
 import CPU_Reader
