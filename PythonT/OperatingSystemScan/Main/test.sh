@@ -9,7 +9,7 @@ fi
 
 if [ -d "$dir_path" ]; then
     cd ~/Desktop/PC_SCAN/gitTraining/PythonT/OperatingSystemScan/Main/
-    $(PYTHON_EXE) main.py
+    $PYTHON_EXE main.py
     cat PC_LOGS.txt
     echo "Successfully ran PC scan"
 else
@@ -24,7 +24,7 @@ else
     if [ $? -ne 0 ]; then
         git clone https://github.com/YujiTheDragon/gitTraining.git
     fi
-    $(PYTHON_EXE) -m ensurepip --upgrade
+    $PYTHON_EXE -m ensurepip --upgrade
     pip install psutil
     if [ $? -ne 0 ]; then
         echo "Failed to download Modules"
@@ -32,5 +32,5 @@ else
     fi
     read -p "Press enter to continue"
     cd gitTraining/PythonT/OperatingSystemScan/Main/
-    ./test.sh
+    bash ./test.sh
 fi

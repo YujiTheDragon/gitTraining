@@ -1,12 +1,12 @@
 import sys
 
-sys.path.append("C:/Users/KAY3SF/Desktop/Training/PythonT/OperatingSystemScan")
+sys.path.append(r"~/Desktop/PC_SCAN/gitTraining/PythonT/OperatingSystemScan")
 
 
 import OSReader as OSR
 from time import time
 from datetime import datetime
-
+import Visualization as VIS
 
 def GetData():
     OSR.CPU_Reader.DisplayCPU_Usage()
@@ -15,7 +15,9 @@ def GetData():
 
 
 def main():
-    open("PC_LOGS.txt","w").close()
+    
+    VIS.draw.DisplayData()
+    open("PC_LOGS.txt", "w").close()
     with open("PC_LOGS.txt", "a") as file:
         file.write(datetime.now().strftime("%Y-%m-%d %H:%M:%S\n"))
     start = time()
