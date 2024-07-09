@@ -1,12 +1,18 @@
 #!/bin/bash
 
 dir_path=~/Desktop/PC_SCAN
+PYTHON_EXE=py
+if ! command -v py &>/dev/null; then
+    echo "PY not found using PYTHON"
+    PYTHON_EXE=python
+fi
 
 if [ -d "$dir_path" ]; then
-    py main.py
+    cd ~/Desktop/PC_SCAN/gitTraining/PythonT/OperatingSystemScan/Main/
+    $(PYTHON_EXE) main.py
     cat PC_LOGS.txt
     echo "Successfully ran PC scan"
-else 
+else
     echo "Files not found installing"
     mkdir -p ~/Desktop/PC_SCAN
     if [ $? -ne 0 ]; then
@@ -15,10 +21,10 @@ else
     fi
     cd ~/Desktop/PC_SCAN
     ls ~/Desktop/PC_SCAN/gitTraining
-    if [ $? -ne 0 ]; then    
+    if [ $? -ne 0 ]; then
         git clone https://github.com/YujiTheDragon/gitTraining.git
     fi
-    py -m ensurepip --upgrade
+    $(PYTHON_EXE) -m ensurepip --upgrade
     pip install psutil
     if [ $? -ne 0 ]; then
         echo "Failed to download Modules"
