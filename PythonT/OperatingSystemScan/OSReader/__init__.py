@@ -1,5 +1,6 @@
 import sys
-sys.path.append(r"~/Desktop/PC_SCAN/gitTraining/PythonT/OperatingSystemScan")
+sys.path.append("PythonT/OperatingSystemScan/OSReader")
+
 
 import CPU_Reader
 import RAM_Reader

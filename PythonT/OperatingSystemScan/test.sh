@@ -8,7 +8,7 @@ if ! command -v py &>/dev/null; then
 fi
 
 if [ -d "$dir_path" ]; then
-    cd ~/Desktop/PC_SCAN/gitTraining/PythonT/OperatingSystemScan/Main/
+    cd ~/Desktop/PC_SCAN/gitTraining/PythonT/OperatingSystemScan
     $PYTHON_EXE main.py
     cat PC_LOGS.txt
     echo "Successfully ran PC scan"
@@ -31,6 +31,6 @@ else
         exit 1
     fi
     read -p "Press enter to continue"
-    cd gitTraining/PythonT/OperatingSystemScan/Main/
+    cd gitTraining/PythonT/OperatingSystemScan
     bash ./test.sh
 fi
